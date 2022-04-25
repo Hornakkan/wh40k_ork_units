@@ -1,0 +1,119 @@
+$bg-noir-clair: #333;
+$bg-noir-fonce: #222;
+$bloc-color: white;
+$bg-image: repeating-linear-gradient(135deg, rgba(189,189,189,0.1) 0px, rgba(189,189,189,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+$font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: $bg-noir-clair;
+}
+
+.container {
+    width: 700px;
+    height: 630px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bloc {
+    height: 70px;
+    margin: 5px;
+    border-radius: 25px;
+    //background: $bloc-color;
+    background: $bg-image;
+    flex-grow: 1;
+    flex-shrink: 1;
+    transition: flex-grow 0.4s ease-out;
+    position: relative;
+    overflow: hidden;
+    &-haut{
+        height: 70px;
+        display: flex;
+        align-items: center;
+    }
+    & * {
+        pointer-events: none;
+    }
+    & .ligne {
+        width: 60%;
+        height: 1px;
+        border-radius: 2px;
+        background: $bg-noir-fonce;
+        margin: 0 5px 0 auto;
+    }
+}
+
+.active {
+    flex-grow: 10000;
+}
+
+.rond {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, $bg-noir-fonce, $bg-noir-clair);
+    border-radius: 50%;
+    & img {
+        width: 40px;
+    }
+}
+
+.titre-section {
+    margin: 0 25px;
+    font-size: 30px;
+}
+
+.prix {
+    font-family: $font;
+    font-size: 22px;
+    margin: 0 18px 0 10px;
+    font-weight: bold;
+}
+
+.contenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img {
+        width: 200px;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    & p {
+        width: 350px;
+    }
+}
+
+.infos  {
+    font-family: $font;
+    & h2 {
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+    }
+    & p {
+        line-height: 140%;
+    }
+    & button {
+        //background: transparent;
+        background: $bloc-color;
+        border: 1px solid $bg-noir-fonce;
+        padding: 10px 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        font-size: 17px;
+        pointer-events: auto!important;
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}
