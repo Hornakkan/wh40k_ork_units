@@ -98,7 +98,8 @@ body {
   line-height: 140%;
 }
 .infos button {
-  background: white;
+  background: #333;
+  color: white;
   border: 1px solid #222;
   padding: 10px 10px;
   margin-top: 10px;
